@@ -1,0 +1,24 @@
+query {
+  usuarios{
+    nombre
+    email
+    fechaNacimiento
+    sexo
+  }
+}
+
+query {
+    usuario (email: "camilog2211@gmail.com"){
+      nombre
+      email
+    }
+  }
+
+mutation{
+  createUser(
+      nombre: "Camilo"
+      email: "camilog2211@gmail.com"
+      fechaNacimiento: "2020-12-24T09:53:09.143-03:00"
+      sexo: "hombre"
+  )
+}
