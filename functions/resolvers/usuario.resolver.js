@@ -28,17 +28,20 @@ const resolvers = {
     },
     Mutation: {
         createUser: async(parent, args) => {
-            console.log(args)
+
+            var usuario = {
+                nombre: args.nombre,
+                email: args.email,
+                fechaNacimiento: args.fechaNacimiento,
+                sexo: args.sexo
+            }
+
             await admin
                 .database()
                 .ref("usuarios")
-                .push({
-                    nombre: args.nombre,
-                    email: args.email,
-                    fechaNacimiento: args.fechaNacimiento,
-                    sexo: args.sexo
-                });
-            return true
+                .push(usuario);
+
+            return usuario;
         }
     }
 };

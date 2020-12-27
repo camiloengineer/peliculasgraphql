@@ -16,7 +16,7 @@ const typeDefs = `
         nombre: String!
         email: String!
         fechaNacimiento: String!
-        sexo: String!): Boolean
+        sexo: String!): Usuario
   }
 `;
 
